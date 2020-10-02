@@ -1,0 +1,23 @@
+package net.spring.auditoria.bll;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class AuditoriaController {
+
+	@Autowired
+	private AuditoriaManagement am;
+	
+	private final Logger LOGGER = LoggerFactory.getLogger(AuditoriaController.class);
+	
+	@GetMapping("/auditar")
+	public String auditar() {
+		LOGGER.info("auditar()");
+		return "main";
+	}
+	
+}
